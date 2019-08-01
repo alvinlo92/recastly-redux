@@ -7,20 +7,14 @@ import YOUTUBE_API_KEY from '../config/youtube.js';
 var handleVideoSearch = (q) => {
 
   //TODO:  Write an asynchronous action to handle a video search!
-  let options = {
-    part: 'snippet',
-    maxResults: 5,
-    q: q,
-    videoEmbeddable: true,
-    key: YOUTUBE_API_KEY,
-    type: 'video'
-  };
+  // call searchYoutube with key, query, max and callback
+  return function(dispatch) {
 
-  $.get('https://www.googleapis.com/youtube/v3/search', options, (data) => {
-    changeVideo(data.items[0]);
-    changeVideoList(data.items);
-  });
-
+    searchYouTube({key: YOUTUBE_API_KEY, query: q, max: 5}, (data) => {
+      dispatch(changeVideoList(data));
+      dispatch(changeVideo(data[0]));
+    });
+  }
 };
 
 export default handleVideoSearch;
