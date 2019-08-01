@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Search from './../components/Search.js';
+import Search from '../components/Search.js';
 import handleVideoSearch from '../actions/search.js';
 
 var mapStateToProps = (state) => ({videos: state.videoList, video: state.currentVideo});
