@@ -40,6 +40,6 @@
     "redux-test-utils": "^0.3.0",
     "sinon": "^9.0.0",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   }
 }
